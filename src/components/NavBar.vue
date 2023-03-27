@@ -1,5 +1,5 @@
 <template>
-	<nav>
+	<nav id="nav">
 		<ul class="nav-list-1">
 			<li class="logo"><a href="#"><img src="../assets/tesla-logo.png" alt="Logo of Tesla"></a></li>
 		</ul>
@@ -45,18 +45,43 @@
 
 	function openSidemenu() {
 		const sidemenu = document.getElementById("sidemenu");
+		const nav = document.getElementById("nav");
+		const overlay = document.getElementById("overlay");
+		const scrollbarWidth = window.innerWidth - document.body.clientWidth;
+
 		sidemenu.style.width = "330px";
 		sidemenu.style.borderLeft = "1px solid #C0C0C0";
+		sidemenu.style.opacity = "1";
 		document.body.style.overflow = "hidden";
+
+		overlay.style.filter = "blur(4px)";
+		nav.style.filter = "blur(4px)";
+		overlay.style.transition= "filter 0.3s ease-in-out"
+		nav.style.transition= "filter 0.3s ease-in-out"
+
+		document.body.style.marginRight = `${scrollbarWidth}px`;
+		sidemenu.classList.add("show");
 	}
 
 	function closeSidemenu() {
 		const sidemenu = document.getElementById("sidemenu");
+		const nav = document.getElementById("nav");
+		const overlay = document.getElementById("overlay");
+
 		sidemenu.style.width = "0";
-		sidemenu.addEventListener("transitionend", function() {
-			document.body.style.overflow = "auto";
+		sidemenu.style.opacity = "0";
+
+		overlay.style.filter = "blur(0px)";
+		nav.style.filter = "blur(0px)";
+		overlay.style.transition= "filter 0.3s ease-in-out"
+		nav.style.transition= "filter 0.3s ease-in-out"
+
+		setTimeout(() => {
 			sidemenu.style.borderLeft = "0";
-    	}, {once: true});
+			document.body.style.overflow = "auto";
+			document.body.style.marginRight = "0";
+			sidemenu.classList.remove("show");
+		}, 500);
 	}
 </script>
 
@@ -71,6 +96,7 @@
 	}
 
 	a {
+		white-space: nowrap;
 		text-decoration: none;
 		color: #35383E;
 	}
@@ -142,9 +168,14 @@
 		height: 100%;
 		overflow-x: hidden;
 		background-color: white;
-		transition: 0.5s;
+		transition: 1s;
+		opacity: 0;
 		font-size: 16px;
 		font-weight: bold;
+	}
+
+	aside.show{
+		opacity: 1;
 	}
 
 	aside button {
@@ -236,5 +267,4 @@
 			max-width: 80%;
 		}
 	}
-	
 </style>
