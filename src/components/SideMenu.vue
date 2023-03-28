@@ -53,7 +53,6 @@
 </script>
 
 <style scoped>
-
     a {
 		white-space: nowrap;
 		text-decoration: none;
@@ -64,8 +63,8 @@
 		padding: 0;
 		border: 0;
 		font-family: inherit;
-		background-color: transparent;
 		cursor: pointer;
+		background-color: transparent;
 	}
 
     aside {
