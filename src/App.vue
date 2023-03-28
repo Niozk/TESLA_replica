@@ -1,14 +1,14 @@
 <template>
-    <NavBar />
+    <SideMenu />
     <div id="overlay">
+        <ArticleCarousel />
         <p>TESTESTEST</p>
-
     </div>
 </template>
 
 <script setup>
-    import NavBar from './components/NavBar.vue'
-
+    import ArticleCarousel from './components/ArticleCarousel.vue'
+    import SideMenu from './components/SideMenu.vue'
 </script>
 
 <style scoped>
