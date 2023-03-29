@@ -34,14 +34,14 @@
 		const scrollbarWidth = window.innerWidth - document.body.clientWidth;
 
 		sidemenu.style.width = "330px";
-		sidemenu.style.boxShadow = "0 3px 10px rgb(0 0 0 / 0.2)"
+		sidemenu.style.boxShadow = "0 3px 10px rgb(0 0 0 / 0.2)";
 		sidemenu.style.opacity = "1";
 		document.body.style.overflow = "hidden";
 
 		overlay.style.filter = "blur(4px)";
 		nav.style.filter = "blur(4px)";
-		overlay.style.transition= "filter 0.3s ease-in-out"
-		nav.style.transition= "filter 0.3s ease-in-out"
+		overlay.style.transition= "filter 0.3s ease-in-out";
+		nav.style.transition= "filter 0.3s ease-in-out";
 
 		document.body.style.marginRight = `${scrollbarWidth}px`;
 		sidemenu.classList.add("show");
@@ -53,7 +53,7 @@
 		display: flex;
 		justify-content: space-between;
 		position: sticky;
-		z-index: 1;
+		z-index: 2;
 		top: 0;
 		left: 0;
 		right: 0;

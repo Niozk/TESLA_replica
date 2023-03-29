@@ -39,11 +39,11 @@
 
 		overlay.style.filter = "blur(0px)";
 		nav.style.filter = "blur(0px)";
-		overlay.style.transition= "filter 0.3s ease-in-out"
-		nav.style.transition= "filter 0.3s ease-in-out"
+		overlay.style.transition= "filter 0.3s ease-in-out";
+		nav.style.transition= "filter 0.3s ease-in-out";
 
 		setTimeout(() => {
-			sidemenu.style.boxShadow = "0"
+			sidemenu.style.boxShadow = "0";
 			document.body.style.overflow = "auto";
 			document.body.style.marginRight = "0";
 			sidemenu.classList.remove("show");
@@ -53,20 +53,6 @@
 </script>
 
 <style scoped>
-    a {
-		white-space: nowrap;
-		text-decoration: none;
-		color: #35383E;
-	}
-
-	button {
-		padding: 0;
-		border: 0;
-		font-family: inherit;
-		cursor: pointer;
-		background-color: transparent;
-	}
-
     aside {
 		display: flex;
 		flex-direction: column; 
@@ -82,6 +68,20 @@
 		opacity: 0;
 		font-size: 16px;
 		font-weight: bold;
+	}
+
+	a {
+		white-space: nowrap;
+		text-decoration: none;
+		color: #35383E;
+	}
+
+	button {
+		padding: 0;
+		border: 0;
+		font-family: inherit;
+		cursor: pointer;
+		background-color: transparent;
 	}
 
 	aside.show {

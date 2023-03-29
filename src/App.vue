@@ -7,8 +7,8 @@
 </template>
 
 <script setup>
-    import ArticleCarousel from './components/ArticleCarousel.vue'
     import SideMenu from './components/SideMenu.vue'
+    import ArticleCarousel from './components/ArticleCarousel.vue'
 </script>
 
 <style scoped>
