@@ -34,6 +34,8 @@
 		const nav = document.getElementById("nav");
 		const overlay = document.getElementById("overlay");
 		const articleText = document.getElementById("article-text");
+		const footer = document.getElementById("footer");
+		const articleButtons = document.getElementById("article-buttons");
 
 		sidemenu.style.width = "0";
 		sidemenu.style.opacity = "0";
@@ -41,14 +43,18 @@
 		overlay.style.filter = "blur(0px)";
 		nav.style.filter = "blur(0px)";
 		articleText.style.filter = "blur(0px)";
+		footer.style.filter = "blur(0px)";
+		articleButtons.style.filter = "blur(0px)";
 
 		setTimeout(() => {
 			sidemenu.style.boxShadow = "0";
 			document.body.style.overflow = "auto";
 			document.body.style.marginRight = "0";
 
-			nav.style.right= ''
-			articleText.style.right= ''
+			nav.style.right = '';
+			articleText.style.right = '';
+			footer.style.right = '';
+			articleButtons.style.right = '';
 			sidemenu.classList.remove("show");
 		}, 500);
 	}

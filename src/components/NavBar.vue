@@ -32,6 +32,8 @@
 		const nav = document.getElementById("nav");
 		const overlay = document.getElementById("overlay");
 		const articleText = document.getElementById("article-text");
+		const footer = document.getElementById("footer");
+		const articleButtons = document.getElementById("article-buttons");
 		const scrollbarWidth = window.innerWidth - document.body.clientWidth;
 
 		sidemenu.style.width = "330px";
@@ -42,12 +44,18 @@
 		overlay.style.filter = "blur(4px)";
 		nav.style.filter = "blur(4px)";
 		articleText.style.filter = "blur(4px)";
+		footer.style.filter = "blur(4px)";
+		articleButtons.style.filter = "blur(4px)";
 		overlay.style.transition= "filter 0.3s ease-in-out";
 		nav.style.transition= "filter 0.3s ease-in-out";
 		articleText.style.transition= "filter 0.3s ease-in-out";
+		footer.style.transition= "filter 0.3s ease-in-out";
+		articleButtons.style.transition= "filter 0.3s ease-in-out";
 
-		nav.style.right= `${scrollbarWidth}px`
-		articleText.style.right= `${scrollbarWidth}px`
+		nav.style.right = `${scrollbarWidth}px`;
+		articleText.style.right = `${scrollbarWidth}px`;
+		footer.style.right = `${scrollbarWidth}px`;
+		articleButtons.style.right = `${scrollbarWidth}px`;
 		document.body.style.marginRight = `${scrollbarWidth}px`;
 		sidemenu.classList.add("show");
 	}

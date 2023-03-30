@@ -22,6 +22,7 @@
 			mobileView.value = window.innerWidth <= 600;
 		});
         window.addEventListener('scroll', handleScroll);
+        handleScroll();
 	});
 
     function handleScroll() {
