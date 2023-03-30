@@ -12,12 +12,13 @@
 
 <style scoped>
 	button {
-		padding: 14px 0;
+		padding: 11px 0;
+		margin: 0 14px;
+		width: 260px;
+		white-space: nowrap;
 		border: 0;
 		border-radius: 5px;
-		width: 300px;
-		white-space: nowrap;
-		font-size: 16px;
+		font-size: 14px;
 		font-family: inherit;
 		font-weight: bold;
 		cursor: pointer;

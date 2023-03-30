@@ -62,7 +62,7 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		margin: 0 36px 25px 36px;
+		margin: 0 36px;
 		padding: 0;
 		font-size: 16px;
 		font-weight: bold;

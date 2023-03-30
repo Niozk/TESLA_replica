@@ -1,7 +1,7 @@
 <template>
     <div id="article-text" class="article-text">
-        <h1> {{ currentItem  }}</h1>
-        <p>Leasing starting at $349/mo</p>
+        <h1>{{ currentTitle }}</h1>
+        <p>{{ currentDesc }}</p>
     </div>
 </template>
 
@@ -9,37 +9,31 @@
     import { ref, onMounted } from 'vue';
 
     const articleTextTitleItems = ['Model Y', 'Model S',  'Model X', 'Solar Panels', 'Solar Roof', 'Accessories'];
-    const startingItem = 'Model 3';
-    let currentItem = ref(startingItem);
+    const articleTextDescItems = ['Schedule a Demo Drive', 'Schedule a Demo Drive',  'Schedule a Demo Drive',
+     'Lowest Cost Solar Panels in America', 'Produce Clean Energy From Your Roof', ''];
+    const startingTitle = 'Model 3';
+    const startingDesc = 'Leasing starting at $349/mo';
+    let currentTitle = ref(startingTitle);
+    let currentDesc = ref(startingDesc);
 
     onMounted(() => {
         window.addEventListener('scroll', changeCurrentItem);
     });
-
-    // function changeCurrentItem() {
-    //     let scrollPosition = document.documentElement.scrollTop;
-    //     currentItem.value = scrollPosition < 450 ? startingItem : itemBasedOnScrollPosition(scrollPosition);
-    //     console.log(scrollPosition);
-    // }
-
-    // function itemBasedOnScrollPosition(scrollPosition) {
-    //     const index = Math.floor((scrollPosition - 450) / 800) % articleTextTitleItems.length;
-    //     const item = articleTextTitleItems[index];
-    //     console.log(item);
-    //     return item;
-    // }
 
     function changeCurrentItem() {
         let scrollPosition = document.documentElement.scrollTop;
         let viewportHeight = window.innerHeight;
         let startingOffset = viewportHeight * 0.44;
         let itemOffset = viewportHeight;
-        currentItem.value = scrollPosition < startingOffset ? startingItem : itemBasedOnScrollPosition(scrollPosition, startingOffset, itemOffset);
+        currentTitle.value = scrollPosition < startingOffset ? startingTitle :
+         itemBasedOnScrollPosition(scrollPosition, startingOffset, itemOffset, articleTextTitleItems);
+        currentDesc.value = scrollPosition < startingOffset ? startingDesc :
+         itemBasedOnScrollPosition(scrollPosition, startingOffset, itemOffset, articleTextDescItems);
     }
 
-    function itemBasedOnScrollPosition(scrollPosition, startingOffset, itemOffset) {
-        const index = Math.floor((scrollPosition - startingOffset) / itemOffset) % articleTextTitleItems.length;
-        const item = articleTextTitleItems[index];
+    function itemBasedOnScrollPosition(scrollPosition, startingOffset, itemOffset, itemList) {
+        const index = Math.floor((scrollPosition - startingOffset) / itemOffset) % itemList.length;
+        const item = itemList[index];
         return item;
     }
 </script>
@@ -54,7 +48,7 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		margin: 110px 36px 25px 36px;
+		margin: 110px 36px 0 36px;
 		padding: 0;
         color: red;
         text-align: center;
@@ -69,7 +63,14 @@
     .article-text p {
         margin: 10px 0;
         white-space: nowrap;
-        font-size: 20px;
+        font-size: 18px;
+    }
+
+    @media only screen 
+	and (max-width: 600px) {
+        .article-text h1 {
+            font-size: 36px;
+        }
     }
 
     @media only screen 

@@ -1,9 +1,5 @@
 <template>
-    <article class="model-3 background-model">
-
-        <!-- <TeslaButton text="hey" color="white" backgroundColor="#35383E"/>
-        <TeslaButton text="Demo drive" color="#35383E" backgroundColor="#E7E7E6"/> -->
-    </article>
+    <article class="model-3 background-model"></article>
     <article class="model-y background-model"></article>
     <article class="model-s background-model"></article>
     <article class="model-x background-model"></article>
@@ -13,7 +9,6 @@
 </template>
 
 <script setup>
-    // import TeslaButton from './TeslaButton.vue'
 </script>
 
 <style scoped>
