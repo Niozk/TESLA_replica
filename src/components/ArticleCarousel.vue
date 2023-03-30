@@ -1,72 +1,27 @@
 <template>
-    <div class="article-text">
-        <h1>{{ currentItem }}</h1>
-        <p>Leasing starting at $349/mo</p>
-        <!-- <button @click="manier">hey</button> -->
-    </div>
-    <article class="model-3 car-model">
-        <NavBar />
+    <article class="model-3 background-model">
+
         <!-- <TeslaButton text="hey" color="white" backgroundColor="#35383E"/>
         <TeslaButton text="Demo drive" color="#35383E" backgroundColor="#E7E7E6"/> -->
     </article>
-    <article class="model-y car-model"></article>
-    <article class="model-s car-model"></article>
-    <article class="model-x car-model"></article>
+    <article class="model-y background-model"></article>
+    <article class="model-s background-model"></article>
+    <article class="model-x background-model"></article>
+    <article class="solar-panels background-model"></article>
+    <article class="solar-roof background-model"></article>
+    <article class="accessories background-model"></article>
 </template>
 
 <script setup>
-    import { ref, onMounted } from 'vue';
-    import NavBar from './NavBar.vue'
     // import TeslaButton from './TeslaButton.vue'
-
-	const articleTextTitleItems = ['Model Y', 'Model S',  'Model X', 'Solar Panels', 'Solar Roof', 'Accessories'];
-    const startingItem = 'Model 3';
-    let currentItem = ref(startingItem);
-
-    onMounted(() => {
-        window.addEventListener('scroll', changeCurrentItem);
-    });
-
-    function changeCurrentItem() {
-        let scrollPosition = document.documentElement.scrollTop;
-        currentItem.value = scrollPosition < 450 ? startingItem : itemBasedOnScrollPosition(scrollPosition);
-        console.log(scrollPosition);
-    }
-
-    function itemBasedOnScrollPosition(scrollPosition) {
-        const index = Math.floor((scrollPosition - 450) / 800) % articleTextTitleItems.length;
-        const item = articleTextTitleItems[index];
-        console.log(item);
-        return item;
-    }
 </script>
 
 <style scoped>
-    body .car-model {
+    body .background-model {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         height: 100vh;
-    }
-
-    .article-text {
-        position: fixed;
-        top: 110px;
-        left: 50%;
-        transform: translate(-50%, 0);
-        text-align: center;
-        color: red;
-    }
-
-    .article-text h1 {
-        margin: 0;
-        white-space: nowrap;
-        font-size: 44px;
-    }
-
-    .article-text p {
-        margin: 10px 0;
-        font-size: 20px;
     }
 
     .model-3 {
@@ -85,9 +40,21 @@
         background: url(../assets/model-x.jfif); 
     }
 
+    .solar-panels {
+        background: url(../assets/solar-panels.jfif); 
+    }
+
+    .solar-roof {
+        background: url(../assets/solar-roof.jpg); 
+    }
+
+    .accessories {
+        background: url(../assets/accessories.jpg); 
+    }
+
     @media only screen 
 	and (max-width: 600px) {
-        body .car-model {
+        body .background-model {
             background-repeat: no-repeat;
             background-position: center;
             background-size: 110%;
@@ -112,21 +79,26 @@
         .model-x {
             background: url(../assets/model-x-mobile.jfif); 
         }
-	}
 
-    @media only screen 
-	and (max-width: 375px) {
-        body .car-model {
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 385px;
+        .solar-panels {
+            background: url(../assets/solar-panels-mobile.jpg); 
+        }
+
+        .solar-roof {
+            background: url(../assets/solar-roof-mobile.jpg); 
+        }
+
+        .accessories {
+            background: url(../assets/accessories-mobile.jpg); 
         }
 	}
 
     @media only screen 
-	and (max-width: 325px) {
-        .article-text p {
-            white-space: normal;
+	and (max-width: 375px) {
+        body .background-model {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 385px;
         }
 	}
 </style>

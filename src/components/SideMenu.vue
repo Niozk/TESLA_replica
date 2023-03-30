@@ -33,23 +33,25 @@
 		const sidemenu = document.getElementById("sidemenu");
 		const nav = document.getElementById("nav");
 		const overlay = document.getElementById("overlay");
+		const articleText = document.getElementById("article-text");
 
 		sidemenu.style.width = "0";
 		sidemenu.style.opacity = "0";
 
 		overlay.style.filter = "blur(0px)";
 		nav.style.filter = "blur(0px)";
-		overlay.style.transition= "filter 0.3s ease-in-out";
-		nav.style.transition= "filter 0.3s ease-in-out";
+		articleText.style.filter = "blur(0px)";
 
 		setTimeout(() => {
 			sidemenu.style.boxShadow = "0";
 			document.body.style.overflow = "auto";
 			document.body.style.marginRight = "0";
+
+			nav.style.right= ''
+			articleText.style.right= ''
 			sidemenu.classList.remove("show");
 		}, 500);
 	}
-
 </script>
 
 <style scoped>
