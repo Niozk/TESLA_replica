@@ -40,7 +40,7 @@
             }
         } else {
             accessoriesView.value = true;
-            articleButtons.style.margin = "600px 36px 0 36px";
+            articleButtons.style.margin = "";
         }
     }
 
@@ -96,7 +96,7 @@
     @media only screen 
     and (max-height: 550px) {
         .article-buttons {
-            margin: 350px 26px 0 26px;
+            margin: 300px 26px 0 26px;
         }
     }
 </style>

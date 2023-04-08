@@ -1,8 +1,10 @@
 <template>
-    <div id="article-text" class="article-text">
-        <h1>{{ currentTitle }}</h1>
-        <p>{{ currentDesc }}</p>
-    </div>
+    <Transition name="fade" mode="out-in" appear>
+        <div id="article-text" class="article-text" :key="currentTitle">
+            <h1>{{ currentTitle }}</h1>
+            <p>{{ currentDesc }}</p>
+        </div>
+  </Transition>
 </template>
 
 <script setup>
@@ -50,10 +52,9 @@
 		right: 0;
 		margin: 110px 36px 0 36px;
 		padding: 0;
-        color: red;
         text-align: center;
     }
-
+    
     .article-text h1 {
         margin: 0;
         white-space: nowrap;
@@ -66,6 +67,16 @@
         font-size: 18px;
     }
 
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity 0.5s ease;
+    }
+
+    .fade-enter-from,
+    .fade-leave-to {
+        opacity: 0;
+    }
+
     @media only screen 
 	and (max-width: 600px) {
         .article-text h1 {
@@ -74,7 +85,7 @@
     }
 
     @media only screen 
-	and (max-width: 350px) {
+	and (max-width: 385px) {
         .article-text p {
             white-space: normal;
         }

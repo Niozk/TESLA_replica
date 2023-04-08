@@ -9,6 +9,37 @@
 </template>
 
 <script setup>
+    import { onMounted } from 'vue';
+
+    onMounted(() => {
+        const backgroundModels = document.querySelectorAll('.background-model');
+        const scrollDistance = 350;
+        let isAutoScrolling = false;
+        let scrollTimeout = null;
+
+        window.addEventListener('scroll', () => {
+            if (isAutoScrolling) return;
+
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                for (let i = 0; i < backgroundModels.length; i++) {
+                    const backgroundModel = backgroundModels[i];
+                    const distanceFromTop = backgroundModel.offsetTop - window.scrollY;
+                    const distanceFromBottom = distanceFromTop + backgroundModel.offsetHeight - window.innerHeight;
+
+                    if (distanceFromTop <= scrollDistance && distanceFromBottom >= -75) {
+                        isAutoScrolling = true;
+                        const elementPosition = backgroundModel.getBoundingClientRect().top + window.pageYOffset;
+                        window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+
+                        setTimeout(() => {
+                            isAutoScrolling = false;
+                        }, 1000);
+                    }
+                }
+            }, 500);
+        });
+    });
 </script>
 
 <style scoped>
