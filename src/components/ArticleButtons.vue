@@ -71,7 +71,7 @@
         top: 0;
         left: 0;
         right: 0;
-        margin: 600px 36px 0 36px;
+        margin: 80vh 36px 0 36px;
         text-align: center;
     }
 
@@ -82,21 +82,7 @@
             align-items: center;
             flex-direction: column;
             gap: 15px;
-            margin: 565px 26px 0 26px;
-        }
-    }
-
-    @media only screen 
-    and (max-height: 720px) {
-        .article-buttons {
-            margin: 450px 26px 0 26px;
-        }
-    }
-
-    @media only screen 
-    and (max-height: 550px) {
-        .article-buttons {
-            margin: 300px 26px 0 26px;
+            margin: 75vh 26px 0 26px;
         }
     }
 </style>
